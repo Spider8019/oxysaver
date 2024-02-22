@@ -6,7 +6,6 @@ import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-
 const Container = styled.div`
   height: 60px;
   ${mobile({ height: "50px" })}
@@ -70,36 +69,39 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = () => {
-  const quantity = useSelector(state=>state.cart.quantity);
+  const quantity = useSelector((state) => state.cart.quantity);
   return (
     <Container>
       <Wrapper>
-        <Left>
-          <Language>EN</Language>
-          <SearchContainer>
-            <Input placeholder="Search" />
-            <Search style={{ color: "gray", fontSize: 16 }} />
-          </SearchContainer>
-        </Left>
+        <div className="hidden sm:block">
+          <Left>
+            <Language>EN</Language>
+            <SearchContainer>
+              <Input placeholder="Search" />
+              <Search style={{ color: "gray", fontSize: 16 }} />
+            </SearchContainer>
+          </Left>
+        </div>
+
         <Center>
           <Logo>Oxy Saver</Logo>
         </Center>
         <Right>
-        <Link to="/howtouse">
-          <MenuItem>How To Use</MenuItem>
+          <Link to="/howtouse">
+            <MenuItem>How To Use</MenuItem>
           </Link>
           <Link to="/register">
-          <MenuItem>Register</MenuItem>
+            <MenuItem>Register</MenuItem>
           </Link>
           <Link to="/login">
-          <MenuItem>Sign In</MenuItem>
+            <MenuItem>Sign In</MenuItem>
           </Link>
-          <Link to="/cart"> 
-          <MenuItem>
-            <Badge badgeContent={quantity} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
-          </MenuItem>
+          <Link to="/cart">
+            <MenuItem>
+              <Badge badgeContent={quantity} color="primary">
+                <ShoppingCartOutlined />
+              </Badge>
+            </MenuItem>
           </Link>
         </Right>
       </Wrapper>

@@ -9,9 +9,9 @@ const HowToUse = () => {
     <>
       <Navbar />
       <Announcement />
-      <div className="p-20">
+      <div className="p-4 sm:p-20">
         <h1 className="text-4xl">How To Use</h1>
-        <div className='grid grid-cols-2 gap-8 my-20'>
+        <div className='grid sm:grid-cols-2 gap-8 my-12 sm:my-20'>
           {[
             {
               title: 'Attach',
@@ -41,14 +41,14 @@ const HowToUse = () => {
             return (
               <div
                 key={index}
-                className=" p-20 rounded-3xl flex gap-8 bg-cyan-600 items-center"
+                className="p-8 sm:p-20 rounded-3xl flex gap-8 bg-cyan-600 items-center"
               >
                 <div>
                   <h1 className="text-3xl font-semibold">{item.title}</h1>
                   <p className="text-xl ">{item.body}</p>
                 </div>
                 <img
-                  className="w-40 h-40 rounded-full"
+                  className="w-20 h-20 sm:w-40 sm:h-40 rounded-full"
                   src={item.img}
                   alt="Adfa"
                 />
