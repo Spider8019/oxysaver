@@ -10,8 +10,8 @@ import Slider from '../components/Slider'
 const Home = () => {
   return (
     <div>
-      <Announcement />
       <Navbar />
+      <Announcement />
       <Slider />
       {/* <Categories /> */}
       <p className='text-3xl sm:text-5xl font-semibold m-4 mt-12'>All Purposes</p>
