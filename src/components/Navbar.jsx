@@ -5,19 +5,12 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import logo from "../assets/images/logo.png"
 
 const Container = styled.div`
-  height: 60px;
   ${mobile({ height: "50px" })}
 `;
 
-const Wrapper = styled.div`
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  ${mobile({ padding: "10px 0px" })}
-`;
 
 const Left = styled.div`
   flex: 1;
@@ -53,13 +46,6 @@ const Logo = styled.h1`
   font-weight: bold;
   ${mobile({ fontSize: "24px" })}
 `;
-const Right = styled.div`
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  ${mobile({ flex: 2, justifyContent: "center" })}
-`;
 
 const MenuItem = styled.div`
   font-size: 14px;
@@ -71,8 +57,7 @@ const MenuItem = styled.div`
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
   return (
-    <Container>
-      <Wrapper>
+    <div className="grid grid-cols-2 sm:grid-cols-3 w-full items-center p-4">
         <div className="hidden sm:block">
           <Left>
             <Language>EN</Language>
@@ -83,10 +68,10 @@ const Navbar = () => {
           </Left>
         </div>
 
-        <Center>
-          <Logo>Oxy Saver</Logo>
-        </Center>
-        <Right>
+        <div className="mx-auto text-center flex-1 bg-red-300 flex justify-center ">
+          <img src={logo} className="h-20 w-40" alt="Logo"/>
+        </div>
+        <div className="flex gap-8 items-center justify-end">
           <Link to="/howtouse">
             <MenuItem>How To Use</MenuItem>
           </Link>
@@ -103,9 +88,8 @@ const Navbar = () => {
               </Badge>
             </MenuItem>
           </Link>
-        </Right>
-      </Wrapper>
-    </Container>
+        </div>
+    </div>
   );
 };
 
