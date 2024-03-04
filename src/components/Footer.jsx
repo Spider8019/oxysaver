@@ -64,7 +64,7 @@ const ContactItem = styled.div`
 const Footer = () => {
   return (
     <div className="flex flex-col sm:flex-row p-4 sm:p-20 gap-8 justify-between bg-[#66bcd2]">
-      <div className="flex flex-col bg-red-200 mx-auto sm:mx-0">
+      <div className="flex flex-col  mx-auto sm:mx-0">
         <Link to="/">
           <img src={logo} alt="Logo" className="w-40" />
         </Link>

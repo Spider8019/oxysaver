@@ -67,7 +67,7 @@ const Navbar = () => {
         </Left>
       </div>
 
-      <div className="mx-auto text-center flex-1 bg-red-300 flex justify-center ">
+      <div className="mx-auto text-center flex-1 flex justify-center ">
         <img src={logo} className="h-20 w-40" alt="Logo" />
       </div>
       <div className="flex gap-8 items-center justify-end">

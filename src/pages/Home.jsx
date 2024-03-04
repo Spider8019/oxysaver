@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 import Newsletter from '../components/Newsletter'
 import Products from '../components/Products'
 import Slider from '../components/Slider'
+import Banner from '../assets/images/banner.png'
 
 const Home = () => {
   return (
@@ -39,7 +40,7 @@ const Home = () => {
           },
         ].map((item, idx) => {
           return <div key={idx} className='transition duration-500 bg-white rounded-xl shadow filter items-center grid sm:grid-cols-2 hover:bg-[#66bcd2] overflow-hidden'>
-            <img src={item.img} className='rounded-xl h-full w-full object-cover' alt={`Small banner ${idx}`} />
+            <img src={Banner} className='rounded-xl h-full w-full object-cover' alt={`Small banner ${idx}`} />
             <div className='p-4'>
               <p className="text-2xl">{item.body}</p>
             </div>
