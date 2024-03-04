@@ -7,9 +7,6 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import logo from '../assets/images/logo.png'
 
-const Container = styled.div`
-  ${mobile({ height: '50px' })}
-`
 
 const Left = styled.div`
   flex: 1;
@@ -68,11 +65,15 @@ const Navbar = () => {
       </div>
 
       <div className="mx-auto text-center flex-1 flex justify-center ">
-        <img src={logo} className="h-20 w-40" alt="Logo" />
+        <Link to="/">
+          <img src={logo} className="h-20 w-40" alt="Logo" />
+        </Link>
       </div>
       <div className="flex gap-8 items-center justify-end">
         <Link to="/howtouse">
-          <button className="shadow p-4 rounded bg-[#66bcd2]">How to Use</button>
+          <button className="shadow p-4 rounded bg-[#66bcd2]">
+            How to Use
+          </button>
         </Link>
         <div className="hidden sm:flex sm:flex-row-reverse gap-8 items-center justify-end">
           <Link to="/register">
